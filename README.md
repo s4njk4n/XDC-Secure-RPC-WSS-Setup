@@ -1,5 +1,7 @@
 # XDC-Secure-RPC-WSS-Setup
 
+<img src="header.jpg" alt="XDC Secure RPC WSS Setup" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+
 Hardened, one-script installer for an **XDC Network** (Mainnet or Apothem Testnet) full node with **secure, access-controlled RPC and WebSocket (WSS) endpoints**.
 
 It deploys the official [XinFin-Node](https://github.com/XinFinOrg/XinFin-Node) Docker setup and immediately locks it down with:
