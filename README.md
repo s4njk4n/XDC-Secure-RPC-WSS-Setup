@@ -152,14 +152,6 @@ sudo nginx -t && sudo systemctl reload nginx
 ## Useful Commands
 
 ```bash
-# Node status
-cd ~/XinFin-Node/mainnet   # or testnet
-docker compose ps
-docker compose logs -f
-
-# Coinbase / validator address
-cat xdcchain/coinbase.txt
-
 # Check Nginx
 sudo nginx -t
 sudo systemctl status nginx
