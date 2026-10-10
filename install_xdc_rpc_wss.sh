@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hardened XDC node installer with Nginx ACL + localhost-only RPC/WS
+# One-script installer for hardened XDC node with SSL/TLS encrypted RPC+WSS
 # Supports both domain (Let's Encrypt) and public-IP (self-signed) modes
 # Path-based endpoints: /rpc and /wss on the same host
 
