@@ -114,6 +114,39 @@ ufw allow 80/tcp comment 'HTTP'
 ufw allow 443/tcp comment 'HTTPS'
 ufw --force enable
 
+echo "=== Configuring Fail2Ban (SSH jail) ==="
+# Copy base config if jail.local does not exist yet
+if [[ ! -f /etc/fail2ban/jail.local ]]; then
+  cp -p /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+fi
+
+# Drop-in override (preferred over editing the large jail.local).
+# Uses the script’s SSH_PORT so bans apply to the correct port.
+# Settings match the article: 3 attempts in 1 day → permanent ban.
+cat > /etc/fail2ban/jail.d/sshd-hardened.local << EOF
+[sshd]
+enabled = true
+filter = sshd
+port = ${SSH_PORT}
+banaction = iptables-multiport
+findtime = 86400
+# 86400 seconds = 1 day
+bantime = -1
+# -1 = ban forever
+maxretry = 3
+# 3 attempts in 1 day = ban
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+EOF
+
+systemctl restart fail2ban
+systemctl enable fail2ban
+
+echo ""
+echo "Fail2Ban SSH jail active. Status: fail2ban-client status sshd"
+echo "Unban example: fail2ban-client set sshd unban <ip>"
+echo ""
+
 # ---------- Host / certificate logic ----------
 if [[ -n "$DOMAIN" ]]; then
   HOST="$DOMAIN"
