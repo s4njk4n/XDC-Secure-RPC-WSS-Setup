@@ -1,3 +1,5 @@
+**Status:** Work in progress — functional but still being refined.
+
 # XDC-Secure-RPC-WSS-Setup
 
 <img src="header.jpg" alt="XDC Secure RPC WSS Setup" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
@@ -12,7 +14,6 @@ It deploys the official [XinFin-Node](https://github.com/XinFinOrg/XinFin-Node) 
 - Localhost-only binding of the node’s RPC/WS ports
 - UFW firewall + basic hardening
 
-**Status:** Work in progress — functional but still being refined.
 
 ---
 
