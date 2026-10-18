@@ -1,4 +1,12 @@
-**Status:** Work in progress — functional but still being refined.
+Go here for a more complete version: https://github.com/s4njk4n/Plugin-XDC-Secure-RPC-WSS
+
+PREFERENTIALLY DO NOT USE THE INFORMATION BELOW AS THE LINK ABOVE IS MUCH MORE COMPLETE
+
+---
+---
+---
+
+
 
 # XDC-Secure-RPC-WSS-Setup
 
